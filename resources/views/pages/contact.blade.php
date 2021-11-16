@@ -2,28 +2,28 @@
 
 @push('meta')
 <!-- Primary Meta Tags -->
-<title>Greenpark Jogja Apartment | Hubungi Kami</title>
-<meta name="title" content="Greenpark Jogja Apartment | Hubungi Kami">
+<title>Hubungi Kami | Grand Emerald Residence</title>
+<meta name="title" content="Hubungi Kami | Grand Emerald Residence">
 <meta name="description" content="Punya pertanyaan yang masih belum terjawab ? Kirim pertanyaan anda sekarang juga.">
 <meta name="author" content="Greenpark Jogja" />
 <meta name="keywords"
-    content="apartemen,apartemen menengah,hunian jogja, greenpark jogja, greenpark jogja apartment,apartment jogja,apartemen jogja,apartemen lengkap, apartemen greenpark jogja,apartemen anak muda" />
+    content="grand emerald, grand emerald residence, grand emerald magelang, grand emerald residence magelang, magelang, perumahan, residence magelang" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://greenparkjogja.com/kontak">
-<meta property="og:title" content="Greenpark Jogja Apartment | Hubungi Kami">
+<meta property="og:url" content="{{ route('main.contact') }}">
+<meta property="og:title" content="Hubungi Kami | Grand Emerald Residence">
 <meta property="og:description"
     content="Punya pertanyaan yang masih belum terjawab ? Kirim pertanyaan anda sekarang juga.">
-<meta property="og:image" content="{{asset('images/logo.svg')}}">
+<meta property="og:image" content="{{asset('images/logo_secondary.svg')}}">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://greenparkjogja.com/kontak">
-<meta property="twitter:title" content="Greenpark Jogja Apartment | Hubungi Kami">
+<meta property="twitter:url" content="{{ route('main.contact') }}">
+<meta property="twitter:title" content="Hubungi Kami | Grand Emerald Residence">
 <meta property="twitter:description"
     content="Punya pertanyaan yang masih belum terjawab ? Kirim pertanyaan anda sekarang juga.">
-<meta property="twitter:image" content="{{asset('images/logo.svg')}}">
+<meta property="twitter:image" content="{{asset('images/logo_secondary.svg')}}">
 @endpush
 
 @section('content')

@@ -2,29 +2,29 @@
 
 @push('meta')
 <!-- Primary Meta Tags -->
-<title>Greenpark Jogja Apartment | Dreamland of Jogja for Health Living</title>
-<meta name="title" content="Greenpark Jogja Apartment | Dreamland of Jogja for Health Living">
+<title>Grand Emerald Residence</title>
+<meta name="title" content="Grand Emerald Residence | My Home My Sanctuary">
 <meta name="description"
-    content="Greenpark Jogja Apartment mengusung konsep yang menyatu dengan alam dengan hamparan sawah, sungai kecil mengalir, dan view gunung merapi. Di areal keramaian kota namun jauh dari polusi udara memungkinkan sebagai hunian yang nyaman.">
-<meta name="author" content="Greenpark Jogja Apartment" />
+    content="Grand Emerald Residence - Perumahan Elite Magelang - Kembali ke alam telah menjadi mimpi yang hadir di benak setiap generasi sejak manusia pertama kali meninggalkan alam.">
+<meta name="author" content="Grand Emerald Residence" />
 <meta name="keywords"
-    content="apartemen,apartemen menengah,hunian jogja, greenpark jogja, greenpark jogja apartment,apartment jogja,apartemen jogja,apartemen lengkap, apartemen greenpark jogja,apartemen anak muda" />
+    content="grand emerald, grand emerald residence, grand emerald magelang, grand emerald residence magelang, magelang, perumahan, residence magelang" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://greenparkjogja.com/">
-<meta property="og:title" content="Greenpark Jogja Apartment | Dreamland of Jogja for Health Living">
+<meta property="og:url" content="{{ route('main.index') }}">
+<meta property="og:title" content="Grand Emerald Residence | My Home My Sanctuary">
 <meta property="og:description"
-    content="Greenpark Jogja Apartment mengusung konsep yang menyatu dengan alam dengan hamparan sawah, sungai kecil mengalir, dan view gunung merapi. Di areal keramaian kota namun jauh dari polusi udara memungkinkan sebagai hunian yang nyaman.">
-<meta property="og:image" content="{{asset('images/logo.svg')}}">
+    content="Grand Emerald Residence - Perumahan Elite Magelang - Kembali ke alam telah menjadi mimpi yang hadir di benak setiap generasi sejak manusia pertama kali meninggalkan alam.">
+<meta property="og:image" content="{{asset('images/logo_secondary.svg')}}">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://greenparkjogja.com/">
-<meta property="twitter:title" content="Greenpark Jogja Apartment | Dreamland of Jogja for Health Living">
+<meta property="twitter:url" content="{{ route('main.index') }}">
+<meta property="twitter:title" content="Grand Emerald Residence | My Home My Sanctuary">
 <meta property="twitter:description"
-    content="Greenpark Jogja Apartment mengusung konsep yang menyatu dengan alam dengan hamparan sawah, sungai kecil mengalir, dan view gunung merapi. Di areal keramaian kota namun jauh dari polusi udara memungkinkan sebagai hunian yang nyaman.">
-<meta property="twitter:image" content="{{asset('images/logo.svg')}}">
+    content="Grand Emerald Residence - Perumahan Elite Magelang - Kembali ke alam telah menjadi mimpi yang hadir di benak setiap generasi sejak manusia pertama kali meninggalkan alam.">
+<meta property="twitter:image" content="{{asset('images/logo_secondary.svg')}}">
 @endpush
 
 @section('content')

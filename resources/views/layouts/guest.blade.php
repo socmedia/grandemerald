@@ -7,16 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="facebook-domain-verification" content="99j6wiklwb50iiobfgv5aepqely0g2" />
 
     @stack('meta')
 
     <!-- favicon -->
-    <link href="{{asset('images/logo.svg')}}" rel="apple-touch-icon" sizes="144x144" />
-    <link href="{{asset('images/logo.svg')}}" rel="apple-touch-icon" sizes="114x114" />
-    <link href="{{asset('images/logo.svg')}}" rel="apple-touch-icon" sizes="72x72" />
-    <link href="{{asset('images/logo.svg')}}" rel="apple-touch-icon" />
-    <link href="{{asset('images/logo.svg')}}" rel="shortcut icon" />
+    <link href="{{asset('images/logo_secondary.svg')}}" rel="apple-touch-icon" sizes="144x144" />
+    <link href="{{asset('images/logo_secondary.svg')}}" rel="apple-touch-icon" sizes="114x114" />
+    <link href="{{asset('images/logo_secondary.svg')}}" rel="apple-touch-icon" sizes="72x72" />
+    <link href="{{asset('images/logo_secondary.svg')}}" rel="apple-touch-icon" />
+    <link href="{{asset('images/logo_secondary.svg')}}" rel="shortcut icon" />
 
     <link rel="stylesheet" href="{{ asset('css/grandemerald.css') }}">
 
