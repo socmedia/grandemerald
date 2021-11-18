@@ -59,9 +59,6 @@
                             <div class="py-2">
                                 <h3 class="highlight mb-0">Lokasi Perumahan</h3>
                                 <p class="mb-0">Jl. A. Yani No. 25. Magelang, Jawa Tengah</p>
-                                <p class="mb-0">Jl. Jend. Sarwo Edhie Wibowo Jl. Emerald No.91, Seneng Satu,
-                                    Banyurojo, Kec.
-                                    Mertoyudan, Magelang, Jawa Tengah 56172</p>
                             </div>
                             <div class="py-2">
                                 <h3 class="highlight mb-0">Kontak</h3>
