@@ -21,7 +21,7 @@ Route::group([
 ], function () {
     Route::get('/', [MainController::class, 'index'])->name('index');
 
-    Route::get('/lokasi', [MainController::class, 'location'])->name('location');
+    Route::get('/keunggulan', [MainController::class, 'strength'])->name('strength');
 
     Route::get('/fasilitas', [MainController::class, 'facilities'])->name('facilities');
 

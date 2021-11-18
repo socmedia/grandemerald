@@ -43,10 +43,10 @@
                 </a>
             </li>
 
-            <li class="nav-item {{ request()->routeIs('adm.review.*') ? 'active' : '' }}">
-                <a href="{{route('adm.review.index')}}" class="nav-link">
-                    <i class="link-icon" data-feather="git-merge"></i>
-                    <span class="link-title">Ulasan</span>
+            <li class="nav-item {{ request()->routeIs('adm.pages.*') ? 'active' : '' }}">
+                <a href="{{route('adm.pages.index')}}" class="nav-link">
+                    <i class="link-icon" data-feather="layout"></i>
+                    <span class="link-title">Halaman</span>
                 </a>
             </li>
 

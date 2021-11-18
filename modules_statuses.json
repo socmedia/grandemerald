@@ -5,5 +5,7 @@
     "Banner": true,
     "Product": true,
     "Review": true,
-    "Dashboard": true
+    "Dashboard": true,
+    "Pages": true,
+    "Gallery": true
 }

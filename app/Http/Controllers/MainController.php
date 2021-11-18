@@ -11,43 +11,17 @@ class MainController extends Controller
      */
     public function index()
     {
-        // $routes = Route::getRoutes();
-        // $arr = [];
-
-        // foreach ($routes as $route) {
-        //     if (count($route->methods) > 1) {
-        //         if ($route->methods[0] == 'GET' &&
-        //             (
-        //                 !str_contains($route->uri, 'livewire/') &&
-        //                 !str_contains($route->uri, 'debugbar/') &&
-        //                 !str_contains($route->uri, 'admin') &&
-        //                 !str_contains($route->uri, 'files') &&
-        //                 !str_contains($route->uri, 'images') &&
-        //                 !str_contains($route->uri, 'videos') &&
-        //                 !str_contains($route->uri, 'api/')
-        //             )
-        //         ) {
-        //             array_push($arr, [
-        //                 'url' => url($route->uri),
-        //                 'route_name' => $route->getName(),
-        //             ]);
-        //         }
-        //     }
-        // }
-
-        // return ($arr);
-
         return view('pages.index');
     }
 
     /**
-     * Show location on company profile
+     * Show strength on company profile
      *
      * @return void
      */
-    public function location()
+    public function strength()
     {
-        return view('pages.location');
+        return view('pages.strength');
     }
 
     /**

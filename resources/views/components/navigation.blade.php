@@ -23,7 +23,7 @@
     <div class="menu">
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="{{route('main.index')}}">Beranda</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{route('main.location')}}">Lokasi</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{route('main.strength')}}">Keunggulan</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('main.facilities')}}">Fasilitas</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('main.houses')}}">Tipe Rumah</a></li>
             <li class="nav-item"><a class="nav-link" href="{{route('main.contact')}}">Hubungi Kami</a></li>
