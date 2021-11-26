@@ -27,8 +27,9 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        $contact = ContactsAttribute::orderBy('id')->get()->toArray();
+        // $contact = ContactsAttribute::orderBy('id')->get()->toArray();
 
+        $contact = [];
         $instagram = count($contact) > 0 ? $contact[0] : null;
         $facebook = count($contact) > 1 ? $contact[1] : null;
         $email = count($contact) > 2 ? $contact[2] : null;
