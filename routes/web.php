@@ -27,7 +27,9 @@ Route::group([
 
     Route::get('/tipe-rumah', [MainController::class, 'houses'])->name('houses');
 
-    Route::get('/kontak', [MainController::class, 'contact'])->name('contact');
+    Route::get('/hubungi-kami', [MainController::class, 'contact'])->name('contact');
+
+    Route::get('/galeri', [MainController::class, 'gallery'])->name('gallery');
 });
 
 Auth::routes(['verify' => false]);

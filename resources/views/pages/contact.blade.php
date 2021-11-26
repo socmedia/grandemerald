@@ -27,77 +27,19 @@
 @endpush
 
 @section('content')
-<section class="environtment overlay-full">
-    <div class="content container-fluid">
-        <div class="card-body">
-            <div class="mb-5">
-                <h2 class="highlight">Hubungi Kami Sekarang</h2>
-                <p class="description text-center mx-auto">
-                    Isi formulir di bawah ini dan Konsultan Penjualan kami akan segera menghubungi Anda.
-                </p>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div class="py-2">
-                                <h3 class="highlight mb-0">Lokasi Perumahan</h3>
-                                <p class="mb-0">Jl. A. Yani No. 25. Magelang, Jawa Tengah</p>
-                            </div>
-                            <div class="py-2">
-                                <h3 class="highlight mb-0">Kontak</h3>
-                                <p class="mb-0">
-                                    <svg class="mr-2" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor"
-                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                                        class="css-i6dzq1">
-                                        <path
-                                            d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                        </path>
-                                    </svg>
-                                    <a href="tel:+">02933202043</a>
-                                </p>
-                                {{-- <p class="mb-0">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M19.6538 7.15092C16.9613 2.99986 11.4639 1.76576 7.20066 4.34615C3.0496 6.92654 1.70331 12.5361 4.39589 16.6871L4.62028 17.0237L3.72275 20.3894L7.08847 19.4919L7.42505 19.7163C8.88353 20.5016 10.4542 20.9504 12.0249 20.9504C13.7077 20.9504 15.3906 20.5016 16.8491 19.6041C21.0001 16.9115 22.2342 11.4142 19.6538 7.15092V7.15092ZM17.2978 15.7896C16.8491 16.4628 16.2881 16.9115 15.5028 17.0237C15.054 17.0237 14.4931 17.2481 12.2493 16.3506C10.342 15.453 8.77134 13.9946 7.64943 12.3117C6.97628 11.5264 6.63971 10.5166 6.52752 9.50693C6.52752 8.60941 6.86409 7.82407 7.42505 7.26312C7.64943 7.03873 7.87381 6.92654 8.09819 6.92654H8.65915C8.88353 6.92654 9.10791 6.92654 9.2201 7.37531C9.44448 7.93626 10.0054 9.28255 10.0054 9.39474C10.1176 9.50693 10.1176 9.73131 10.0054 9.8435C10.1176 10.0679 10.0054 10.2923 9.89325 10.4045C9.78105 10.5166 9.66886 10.741 9.55667 10.8532C9.33229 10.9654 9.2201 11.1898 9.33229 11.4142C9.78105 12.0873 10.342 12.7605 10.903 13.3214C11.5761 13.8824 12.2493 14.3311 13.0346 14.6677C13.259 14.7799 13.4834 14.7799 13.5955 14.5555C13.7077 14.3311 14.2687 13.7702 14.4931 13.5458C14.7175 13.3214 14.8296 13.3214 15.054 13.4336L16.8491 14.3311C17.0735 14.4433 17.2978 14.5555 17.41 14.6677C17.5222 15.0043 17.5222 15.453 17.2978 15.7896V15.7896Z"
-                                            fill="#C2C2C2" />
-                                    </svg>
-                                    <a href="tel:+">02933202043</a>
-                                </p> --}}
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <form wire:submit.prevent="">
-                                <fieldset class="form-group">
-                                    <label for="nama_lengkap">Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap">
-                                </fieldset>
-                                <fieldset class="form-group row">
-                                    <div class="col-md-6 mb-3 mb-md-0">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email" id="email" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="whatsapp">Whatsapp</label>
-                                        <input type="text" class="form-control" name="whatsapp" id="whatsapp" />
-                                    </div>
-                                </fieldset>
-                                <fieldset class="form-group mb-4">
-                                    <label for="pertanyaan">Pertanyaan</label>
-                                    <textarea class="form-control" name="pertanyaan" id="pertanyaan"></textarea>
-                                </fieldset>
-
-                                <div class="form-group text-center">
-                                    <button class="btn btn-light">Kirim Pertanyaan</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<livewire:main.contact />
 @endsection
+
+@push('custom-scripts')
+<script>
+    $(function () {
+        $('#whatsapp').on('input', function () {
+            this.value = this.value.replace(/[^0-9+]/g, '');
+            if (this.value.length <= 3) {
+                this.value !== '+62' ? this.value = '+62' + this.value : false;
+            }
+            this.value=this.value.substr(0, 15)
+        })
+    })
+</script>
+@endpush

@@ -27,26 +27,6 @@ class PagesController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('pages::show');
-    }
-
-    /**
      * Show the form for editing the specified resource.
      * @param int $id
      * @return Renderable

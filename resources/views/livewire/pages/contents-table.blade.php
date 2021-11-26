@@ -5,15 +5,14 @@
             <input type="text" wire:model.debounce.250ms="search" placeholder="Cari disini" class="form-control">
         </div>
 
-        <div class="col-12 col-md-3 text-right">
+        <div class="col-12 col-md-9 text-right">
             <div class="btn-group">
                 @if ($p != 'trash')
                 <a href="{{route('adm.pages.create', ['reference' => $active])}}" class="btn btn-primary">Tambah</a>
-                <a href="{{route('adm.pages.index', ['p' => 'trash'])}}" class="btn btn-secondary">Tong
-                    Sampah</a>
                 @else
                 <a href="{{route('adm.pages.index', ['p' => 'main'])}}" class="btn btn-primary">Kembali</a>
                 @endif
+                <a href="{{$route}}" target="_blank" class="btn btn-primary">Tinjau Halaman</a>
             </div>
         </div>
 
@@ -28,9 +27,10 @@
                     <thead>
                         <tr class="text-center">
                             <th>Nama</th>
-                            <th>Bagian</th>
+                            <th>Urutan</th>
                             <th>Status</th>
-                            <th>Tanggal Pembuatan</th>
+                            <th>Judul Utama</th>
+                            <th>Judul Emas</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -38,11 +38,10 @@
                         @forelse ($contents as $content)
                         <tr wire:sortable.item="{{ $content->id }}" wire:key="content-{{ $content->id }}">
                             <td>
-                                <a href="javascript:void(0)" class="btn btn-link"
-                                    wire:click="preview('{{$content->id}}')"
-                                    style="cursor: pointer">{{$content->name}}</a>
+                                <img style="width: 100px; height: auto; border-radius: 0" src="{{$content->image}}"
+                                    alt="">
                             </td>
-                            <td>{{$content->section}}</td>
+                            <td class="text-center">{{$content->order}}</td>
                             <td class="text-center">
                                 <div class="dropdown">
                                     <a class="{{$content->is_active}} dropdown-toggle text-capitalize"
@@ -65,7 +64,10 @@
 
                             </td>
                             <td class="text-center">
-                                {{$content->created_at->format('D d, M Y')}}
+                                {{$content->title_normal ?: '-'}}
+                            </td>
+                            <td class="text-center">
+                                {{$content->title_secondary ?: '-'}}
                             </td>
                             <td class="text-center">
                                 <div class="dropdown">
@@ -84,21 +86,14 @@
                                     <div class="dropdown-menu" aria-labelledby="active">
 
                                         <a class="dropdown-item"
-                                            href="{{ route('adm.pages.edit', $content->id ) }}">Edit
-                                            Halaman</a>
-                                        <a class="dropdown-item"
-                                            href="{{ route('adm.pages.list', $content->id ) }}">Lihat
-                                            Halaman</a>
+                                            href="{{ route('adm.pages.edit', ['id' => $content->id, 'reference' => $active] ) }}">Edit
+                                            Konten</a>
 
-                                        {{-- <button type="button" class="dropdown-item" data-toggle="modal"
+                                        <button type="button" class="dropdown-item" data-toggle="modal"
                                             data-target="#delete-confirmation"
                                             onclick="$('#delete-confirmation .btn-danger').attr('wire:click', 'delete(\'{{$content->id}}\')')">
                                             Hapus Permanen
                                         </button>
-                                        <button class="dropdown-item" type="button"
-                                            wire:click="{{!$content->deleted_at ? 'trash' : 'restore'}}('{{$content->id}}')">
-                                            {{!$content->deleted_at ? 'Tong Sampah' : 'Pulihkan'}}
-                                        </button> --}}
 
                                     </div>
                                 </div>

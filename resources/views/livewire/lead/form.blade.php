@@ -1,62 +1,58 @@
 <div>
     <div class="form-card">
         <div class="form-card-body">
+
+            @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{session('success')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+
             <form wire:submit.prevent="submitForm">
-                <div class="form-group">
-                    <label for="nama">Nama Lengkap<sup>*</sup> </label>
-                    <input type="text" class="form-control" placeholder="Tuliskan nama lengkap anda"
-                        wire:model.defer="nama">
-                    @error('nama')
-                    <small class="text-red">{{$message}}</small>
+                <fieldset class="form-group">
+                    <label for="nama_lengkap">Nama Lengkap</label>
+                    <input type="text" class="form-control" wire:model.defer="nama_lengkap" id="nama_lengkap">
+
+                    @error('nama_lengkap')
+                    <small class="text-danger">{{$message}}</small>
                     @enderror
-                </div>
+                </fieldset>
+                <fieldset class="form-group row">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" wire:model.defer="email" id="email" />
 
-                <div class="form-group row">
-
-                    <div class="col-12 col-md-6 mb-3 mb-md-0">
-                        <label for="telepon">No. Telp<sup>*</sup> </label>
-                        <input type="text" class="form-control" placeholder="Masukkan no whatsapp anda"
-                            wire:model.defer="telepon" data-inputmask="phone">
-                        @error('telepon')
-                        <small class="text-red">{{$message}}</small>
-                        @enderror
-                    </div>
-
-                    <div class="col-12 col-md-6 mb-3 mb-md-0">
-                        <label for="email">Email<sup>*</sup> </label>
-                        <input type="text" class="form-control numeric" placeholder="Masukkan alamat email anda"
-                            wire:model.defer="email">
                         @error('email')
-                        <small class="text-red">{{$message}}</small>
+                        <small class="text-danger">{{$message}}</small>
                         @enderror
                     </div>
+                    <div class="col-md-6">
+                        <label for="whatsapp">Whatsapp</label>
+                        <input type="text" class="form-control" wire:model.defer="whatsapp" id="whatsapp" />
 
-                </div>
+                        @error('whatsapp')
+                        <small class="text-danger">{{$message}}</small>
+                        @enderror
+                    </div>
+                </fieldset>
+                <fieldset class="form-group mb-4">
+                    <label for="pertanyaan">Pertanyaan</label>
+                    <textarea class="form-control" wire:model.defer="pertanyaan" id="pertanyaan"></textarea>
 
-                <div class="form-group">
-                    <label for="alamat">Alamat<sup>*</sup> </label>
-                    <textarea class="form-control" placeholder="Dimana anda tinggal sekarang ?"
-                        wire:model.defer="alamat"></textarea>
-                    @error('alamat')
-                    <small class="text-red">{{$message}}</small>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="pertanyaan">Pertanyaan<sup>*</sup> </label>
-                    <textarea class="form-control lg" placeholder="Apa yang ingin anda tanyakan ?"
-                        wire:model.defer="pertanyaan"></textarea>
                     @error('pertanyaan')
-                    <small class="text-red">{{$message}}</small>
+                    <small class="text-danger">{{$message}}</small>
                     @enderror
-                </div>
+                </fieldset>
 
-                <fieldset class="form-group text-center">
-                    <button class="btn btn-greenpark">
-                        Kirim
+                <div class="form-group text-center">
+                    <button class="btn btn-light">
+                        Kirim Pertanyaan
                         <div id="spinner" class="text-light ml-1" wire:loading wire:loading.class="loading"></div>
                     </button>
-                </fieldset>
+                </div>
 
             </form>
         </div>

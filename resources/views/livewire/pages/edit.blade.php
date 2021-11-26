@@ -1,12 +1,12 @@
 <div>
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 mb-3">
             <div class="card">
 
                 <div class="card-header">
                     <div class="row">
                         <div class="col-12 col-md-6 mb-3 mb-md-0">
-                            <h3 class="card-title">Tambah Halaman</h3>
+                            <h3 class="card-title">Edit Konten</h3>
                         </div>
                         <div class="col-12 col-md-6 text-right">
                             <a href="{{route('adm.pages.index')}}" class="btn btn-primary">Kembali</a>
@@ -14,70 +14,67 @@
                     </div>
                 </div>
 
+                @if ($page)
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-8">
                             <form wire:submit.prevent="savePage" enctype="multipart/form-data">
 
                                 <div class="form-group">
-                                    <label for="image">Gambar</label>
-                                    <input type="file" accept="image/*" class="form-control" wire:model="image"
-                                        id="image">
+                                    @if ($content && !$image)
+                                    <img class="img-fluid" src="{{ $content ? $content['image'] : '' }}" alt="">
+                                    @endif
 
-                                    @error('image')
-                                    <small class="text-danger">{{ $message }}</small>
-                                    @enderror
+                                    @if($image)
+                                    <img class="img-fluid" src="{{ $image ? $image->temporaryUrl() : ''}}" alt="">
+                                    @endif
                                 </div>
 
                                 <div class="form-group row">
                                     <div class="col-md-6 mb-3 mb-md-0">
                                         <label for="name">Nama Halaman</label>
-                                        <select wire:model="name" id="name" class="form-control">
-                                            @foreach ($routes as $route)
-                                            <option value="{{ $route['url'] }}">
-                                                {{$route['url'] == '/' ? 'homepage' : $route['url']}}
-                                            </option>
-                                            @endforeach
-                                        </select>
-
-                                        <input type="hidden" wire:model="route_name">
-
-                                        @error('name')
-                                        <small class="text-danger">{{ $message }}</small>
-                                        @enderror
+                                        <div class="form-control bg-light">{{ $page->name }}</div>
                                     </div>
-                                    <div class="col-10 col-md-4">
-                                        <label for="section">Bagian</label>
-                                        <input type="text" class="form-control" wire:model.defer="section" id="section">
-
-                                        @error('section')
-                                        <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                    <div class="col-2 col-md-2">
+                                    <div class="col-2 col-md-2 mb-3 mb-md-0">
                                         <label for="order">Urutan</label>
-                                        <input type="text" class="form-control" wire:model.defer="order" id="order"
-                                            readonly>
+                                        <div class="form-control bg-light">{{ $content['order'] }}</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="image">Gambar</label>
+                                        <input type="file" accept="image/*" class="form-control" wire:model="image"
+                                            id="image">
 
-                                        @error('order')
+                                        @error('image')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="title">Judul Section</label>
-                                    <input type="text" class="form-control" wire:model.defer="title" id="title">
+                                <div class="form-group row">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <label for="title_normal">Judul Section (Warna Normal)</label>
+                                        <input type="text" class="form-control" wire:model.defer="content.title_normal"
+                                            id="title_normal">
 
-                                    @error('title')
-                                    <small class="text-danger">{{ $message }}</small>
-                                    @enderror
+                                        @error('title_normal')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="title_secondary">Judul Section (Warna Emas)</label>
+                                        <input type="text" class="form-control" wire:model="content.title_secondary"
+                                            id="title_secondary">
+
+                                        @error('title_secondary')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="description">Deskripsi Section</label>
-                                    <textarea class="form-control" wire:model.defer="description" style="height: 100px"
-                                        id="description"></textarea>
+                                    <textarea class="form-control" wire:model.defer="content.description"
+                                        style="height: 100px" id="description"></textarea>
 
                                     @error('description')
                                     <small class="text-danger">{{ $message }}</small>
@@ -91,8 +88,18 @@
                         </div>
                     </div>
                 </div>
+                @else
+
+                <div class="card-body">
+                    <h4 class="text-center">We're sorry, your request was not found.</h4>
+                </div>
+                @endif
+
             </div>
         </div>
+
+        <livewire:pages.edit-attribute :contentId="request()->id" />
     </div>
+
 
 </div>

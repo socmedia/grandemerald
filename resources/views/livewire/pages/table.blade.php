@@ -1,34 +1,5 @@
 <div>
     <div class="row">
-        <div class="col-12 mb-3">
-            <div class="card">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5>Filter</h5>
-                </div>
-                <div class="card-body">
-                    <fieldset class="row justify-content-end">
-
-                        <div class="col-12 col-md-2">
-                            <label for="dateStart">Tampilkan <sub>/Halaman</sub></label>
-                            <select name="" class="form-control select_searchable" wire:model="perPage">
-                                <option value="10">10</option>
-                                <option value="20">20</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                                <option value="250">250</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12 col-md-3 align-self-end">
-                            <input type="text" wire:model.debounce.250ms="search" placeholder="Cari disini"
-                                class="form-control">
-                        </div>
-
-                    </fieldset>
-                </div>
-            </div>
-        </div>
-
         <div class="col-12">
             <div class="card">
 

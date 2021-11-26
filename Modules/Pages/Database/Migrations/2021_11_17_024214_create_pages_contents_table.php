@@ -16,11 +16,9 @@ class CreatePagesContentsTable extends Migration
         Schema::create('pages_contents', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignId('pages_id')->constrained();
-            $table->string('name');
-            $table->string('route_name');
-            $table->string('section')->nullable();
+            $table->string('title_normal')->nullable();
+            $table->string('title_secondary')->nullable();
             $table->string('image')->nullable();
-            $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->boolean('is_active')->default(1);
             $table->tinyInteger('order')->default(1);

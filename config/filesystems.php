@@ -55,6 +55,20 @@ return [
             'visibility' => 'public',
         ],
 
+        'img_gallery' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/gallery'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+
+        'vid_gallery' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/videos/gallery'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
+
         'blogs' => [
             'driver' => 'local',
             'root' => storage_path('app/public/images/blogs'),

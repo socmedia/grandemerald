@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="{{route('adm.index')}}" class="sidebar-brand">
-            <img src="{{asset('images/logo.svg')}}" height="30" alt="Logo">
+            <img src="{{asset('images/logo_secondary.svg')}}" height="30" alt="Logo">
         </a>
         <div class="sidebar-toggler not-active">
             <span></span>
@@ -22,24 +22,10 @@
 
             <li class="nav-item nav-category">Konten</li>
 
-            <li class="nav-item {{ request()->routeIs('adm.banner.*') ? 'active' : '' }}">
-                <a href="{{route('adm.banner.index')}}" class="nav-link">
+            <li class="nav-item {{ request()->routeIs('adm.gallery.*') ? 'active' : '' }}">
+                <a href="{{route('adm.gallery.index')}}" class="nav-link">
                     <i class="link-icon" data-feather="image"></i>
-                    <span class="link-title">Banner</span>
-                </a>
-            </li>
-
-            <li class="nav-item {{ request()->routeIs('adm.product.*') ? 'active' : '' }}">
-                <a href="{{route('adm.product.index')}}" class="nav-link">
-                    <i class="link-icon" data-feather="home"></i>
-                    <span class="link-title">Apartemen</span>
-                </a>
-            </li>
-
-            <li class="nav-item {{ request()->routeIs('adm.faq.*') ? 'active' : '' }}">
-                <a href="{{route('adm.faq.index')}}" class="nav-link">
-                    <i class="link-icon" data-feather="message-square"></i>
-                    <span class="link-title">FAQ</span>
+                    <span class="link-title">Galeri</span>
                 </a>
             </li>
 

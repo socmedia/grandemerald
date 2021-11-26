@@ -16,11 +16,10 @@ class PagesContent extends Model
 
     protected $fillable = [
         'id',
-        'name',
-        'route_name',
-        'section',
+        'pages_id',
+        'title_normal',
+        'title_secondary',
         'image',
-        'title',
         'description',
         'is_active',
         'order',
@@ -29,5 +28,10 @@ class PagesContent extends Model
     protected static function newFactory()
     {
         return \Modules\Pages\Database\factories\PagesContentFactory::new ();
+    }
+
+    public function attributes()
+    {
+        return $this->hasMany(ContentAttribute::class, 'content_id', 'id');
     }
 }

@@ -51,7 +51,7 @@
     <script src="{{ asset('vendor/rellax/rellax.min.js') }}"></script>
     <script src="{{ asset('js/grandemerald.js') }}"></script>
 
-    {{-- @livewireScripts --}}
+    @livewireScripts
 
     @stack('custom-scripts')
 </body>

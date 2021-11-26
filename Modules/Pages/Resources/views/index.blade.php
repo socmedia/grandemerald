@@ -52,98 +52,24 @@
 @push('custom-scripts')
 <script>
     $(function() {
-    function initToast(text) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top',
-            timer: 5000,
-            closeModal: true
-        });
+        function initToast(text) {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top',
+                timer: 5000,
+                closeModal: true
+            });
 
-        Toast.fire({
-            icon: 'success',
-            title: text
+            Toast.fire({
+                icon: 'success',
+                title: text
+            })
+        }
+
+        document.addEventListener('success', function(e) {
+            initToast(e.detail);
         })
-    }
-
-    document.addEventListener('preview-mode', function(e) {
-        $('#previewModal').modal('show');
-        const date = new Date(e.detail.created_at.substring(0, 10));
-        let table = (val) => {
-            return `
-                <div class="row mb-3">
-                    <div class="col-6">
-                        <p>Jenis Pages</p>
-                        <div class="badge badge-light text-capitalize">${e.detail.pages_type}</div>
-                    </div>
-                    <div class="col-6 text-right">
-                        <p>Tanggal Submit</p>
-                        <div class="badge badge-light text-capitalize">${date.toDateString()}</div>
-                    </div>
-                </div>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>Nama</td>
-                            <td>:</td>
-                            <td>${val.name}</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>:</td>
-                            <td>${val.email}</td>
-                        </tr>
-                        <tr>
-                            <td>No. Telp.</td>
-                            <td>:</td>
-                            <td>${val.phone}</td>
-                        </tr>
-                        <tr>
-                            <td>Alamat</td>
-                            <td>:</td>
-                            <td>${val.address}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">
-                                <strong class="d-block mb-2">Pesan:</strong>
-                                <p>${val.question}</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>`;
-        }
-        $('#previewModal').find('.modal-body').html(table(e.detail));
     })
 
-    document.addEventListener('status-updated', function(e) {
-        initToast(e.detail);
-    })
-
-    document.addEventListener('updated', function(e) {
-        $('#updateModal').modal('hide');
-        initToast(e.detail);
-    })
-
-    $('.date_range').daterangepicker({
-        locale: {
-            format: 'YYYY-MM-DD',
-            cancelLabel: 'Clear'
-        }
-    })
-
-    $('[name="date"]').change(function() {
-        if ($(this).val() === 'custom') {
-            $('.date_range_wrapper').removeClass('d-none');
-            $('.date_range_wrapper input').val('');
-        } else {
-            $('.date_range_wrapper').addClass('d-none');
-        }
-    })
-
-    $('#previewModal').on('hidden.bs.modal', function(e) {
-        $(this).find('.modal-body').html('<p class="text-center">Loading...</p>')
-    })
-
-})
 </script>
 @endpush

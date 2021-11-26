@@ -29,9 +29,16 @@
 
 @push('custom-styles')
 <link rel="stylesheet" href="{{asset('vendor/lightgallery/css/lightgallery.min.css')}}">
+<style>
+    table td {
+        font-size: .75rem
+    }
+</style>
 @endpush
 
 @section('content')
+<livewire:main.houses />
+{{--
 <!-- Diamonds Section -->
 <section class="type-100 overlay-bottom">
     <div class="container-fluid">
@@ -658,7 +665,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection
 
 <script src="{{asset('vendor/lightgallery/js/lightgallery.min.js')}}"></script>

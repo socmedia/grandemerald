@@ -2,7 +2,9 @@
     {{-- Navigation --}}
     <nav class="navbar">
         <div class="logo">
-            <img class="logo-md" src="{{ asset('images/logo_with_text.svg') }}" alt="logo long">
+            <a href="{{route('main.index')}}">
+                <img class="logo-md" src="{{ asset('images/logo_with_text.svg') }}" alt="logo long">
+            </a>
         </div>
 
         <div class="toggler">
@@ -33,7 +35,7 @@
             <div class="row">
                 <div class="col-md-4 d-none d-md-block">
                     <ul class="links">
-                        <li><a href="">Galeri</a></li>
+                        <li><a href="{{ route('main.gallery') }}">Galeri</a></li>
                         <li><a href="">Katalog</a></li>
                     </ul>
                 </div>

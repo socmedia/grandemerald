@@ -45,12 +45,22 @@ class MainController extends Controller
     }
 
     /**
-     * Show homepage on company profile
+     * Show contact on company profile
      *
      * @return void
      */
     public function contact()
     {
         return view('pages.contact');
+    }
+
+    /**
+     * Show gallery on company profile
+     *
+     * @return void
+     */
+    public function gallery()
+    {
+        return view('pages.gallery');
     }
 }
