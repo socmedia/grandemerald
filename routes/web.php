@@ -32,7 +32,7 @@ Route::group([
     Route::get('/galeri', [MainController::class, 'gallery'])->name('gallery');
 });
 
-Auth::routes(['verify' => false]);
+Auth::routes(['verify' => false, 'register' => false]);
 
 Route::get('/images/banner/{imageName}', [MediaController::class, 'getBannerImage'])->name('getBannerImage');
 Route::get('/videos/banner/{videoName}', [MediaController::class, 'getBannerVideo'])->name('getBannerVideo');
