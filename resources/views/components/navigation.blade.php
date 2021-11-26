@@ -36,7 +36,7 @@
                 <div class="col-md-4 d-none d-md-block">
                     <ul class="links">
                         <li><a href="{{ route('main.gallery') }}">Galeri</a></li>
-                        <li><a href="">Katalog</a></li>
+                        <li><a href="{{ $catalogue }}" target="_blank">Katalog</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
@@ -46,8 +46,10 @@
                 </div>
                 <div class="col-md-4 d-none d-md-block">
                     <ul class="social-medias justify-content-end">
+
+                        @if ($instagram)
                         <li>
-                            <a href="" target="_blank">
+                            <a href="https://www.instagram.com/{{$instagram}}" target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -59,8 +61,11 @@
                                 </svg>
                             </a>
                         </li>
+                        @endif
+
+                        @if ($facebook)
                         <li>
-                            <a href="" target="_blank">
+                            <a href="https://id-id.facebook.com/{{$facebook}}" target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -69,8 +74,11 @@
                                 </svg>
                             </a>
                         </li>
+                        @endif
+
+                        @if ($email)
                         <li>
-                            <a href="" target="_blank">
+                            <a href="mailto:{{$email}}" target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -79,8 +87,12 @@
                                 </svg>
                             </a>
                         </li>
+                        @endif
+
+                        @if ($whatsapp)
                         <li>
-                            <a href="" target="_blank">
+                            <a href="https://wa.me/{{$whatsapp}}?text=Halo min ! Saya mau tanya seputar perumahan di Grand Emerald Residence."
+                                target="_blank">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -89,6 +101,7 @@
                                 </svg>
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </div>

@@ -11,21 +11,17 @@ class Edit extends Component
 {
     use WithFileUploads;
 
-    public $instagram, $email, $phone_1, $maps, $address, $phone_2, $facebook, $whatsapp, $catalogue, $oldCatalogue;
+    public $instagram, $facebook, $email, $whatsapp, $catalogue, $oldCatalogue;
 
     public function mount()
     {
         $contact = ContactsAttribute::orderBy('id')->get()->toArray();
 
         $this->instagram = count($contact) > 0 ? $contact[0] : null;
-        $this->email = count($contact) > 1 ? $contact[1] : null;
-        $this->phone_1 = count($contact) > 2 ? $contact[2] : null;
-        $this->maps = count($contact) > 3 ? $contact[3] : null;
-        $this->address = count($contact) > 4 ? $contact[4] : null;
-        $this->phone_2 = count($contact) > 5 ? $contact[5] : null;
-        $this->whatsapp = count($contact) > 6 ? $contact[6] : null;
-        $oldCatalogue = count($contact) > 7 ? $contact[7] : null;
-        $this->facebook = count($contact) > 8 ? $contact[8] : null;
+        $this->facebook = count($contact) > 1 ? $contact[1] : null;
+        $this->email = count($contact) > 2 ? $contact[2] : null;
+        $this->whatsapp = count($contact) > 3 ? $contact[3] : null;
+        $oldCatalogue = count($contact) > 4 ? $contact[4] : null;
 
         $catalogueArr = explode('/', $oldCatalogue['value']);
         $catalogueName = end($catalogueArr);
@@ -38,7 +34,7 @@ class Edit extends Component
         $trim = strtolower(str_replace(' ', '_', $component));
         $contact = ContactsAttribute::where('id', $id)->firstOrFail();
         if ($component === 'Catalogue') {
-            $contact->value = $this->catalogue->store('files/catalogue', 'public');
+            $contact->value = url('storage/' . $this->catalogue->store('files/catalogue', 'public'));
         } else {
             $contact->value = $this->$trim['value'];
         }
