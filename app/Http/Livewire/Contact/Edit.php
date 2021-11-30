@@ -11,7 +11,7 @@ class Edit extends Component
 {
     use WithFileUploads;
 
-    public $instagram, $facebook, $email, $whatsapp, $catalogue, $oldCatalogue;
+    public $instagram, $facebook, $email, $whatsapp, $catalogue, $oldCatalogue, $whatsapp2, $phone;
 
     public function mount()
     {
@@ -22,6 +22,8 @@ class Edit extends Component
         $this->email = count($contact) > 2 ? $contact[2] : null;
         $this->whatsapp = count($contact) > 3 ? $contact[3] : null;
         $oldCatalogue = count($contact) > 4 ? $contact[4] : null;
+        $this->whatsapp2 = count($contact) > 5 ? $contact[5] : null;
+        $this->phone = count($contact) > 6 ? $contact[6] : null;
 
         $catalogueArr = explode('/', $oldCatalogue['value']);
         $catalogueName = end($catalogueArr);

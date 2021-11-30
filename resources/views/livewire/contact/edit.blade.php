@@ -122,8 +122,30 @@
                         </div>
 
                         <div class="col-md-6">
+                            <form wire:submit.prevent="updateContact({{$phone['id']}}, '{{$phone['attribute']}}')">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class='mdi mdi-phone'></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" wire:model.defer="phone.value">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-light">
+                                            <i class='mdi mdi-check'></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-group row">
+
+                        <div class="col-md-6 mb-3 mb-md-0">
                             <form
                                 wire:submit.prevent="updateContact({{$whatsapp['id']}}, '{{$whatsapp['attribute']}}')">
+
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
@@ -131,6 +153,26 @@
                                         </div>
                                     </div>
                                     <input type="text" class="form-control" wire:model.defer="whatsapp.value">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-light">
+                                            <i class='mdi mdi-check'></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <small class="text-muted"><em>Nomor yang terhubung dengan form kontak.</em></small>
+                            </form>
+                        </div>
+
+                        <div class="col-md-6">
+                            <form
+                                wire:submit.prevent="updateContact({{$whatsapp2['id']}}, '{{$whatsapp2['attribute']}}')">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class='mdi mdi-whatsapp'></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" wire:model.defer="whatsapp2.value">
                                     <div class="input-group-append">
                                         <button class="btn btn-light">
                                             <i class='mdi mdi-check'></i>
