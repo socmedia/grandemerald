@@ -41,6 +41,10 @@
             }
             this.value=this.value.substr(0, 15)
         })
+
+        document.addEventListener('whatsapp', function (e) {
+            window.open(e.detail);
+        })
     })
 </script>
 @endpush

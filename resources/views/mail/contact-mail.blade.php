@@ -1,13 +1,11 @@
-  @component('mail::message')
-  Pengirim: {{ $request->nama }} <br>
-  Email: {{ $request->email }} <br>
-  Whatsapp: {{ $request->telepon }} <br>
-  Alamat: <br>
-  {{ $request->alamat }}
+@component('mail::message')
+Pengirim: {{ $request->nama }} <br>
+Email: {{ $request->email }} <br>
+Whatsapp: {{ $request->telepon }} <br>
 
-  # Pertanyaan
-  {{ $request->pertanyaan }}
+# Pertanyaan
+{{ $request->pertanyaan }}
 
-  Terimakasih,<br>
-  {{ $request->nama }}
-  @endcomponent
+Terimakasih,<br>
+{{ $request->nama }}
+@endcomponent

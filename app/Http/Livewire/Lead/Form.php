@@ -2,8 +2,11 @@
 
 namespace App\Http\Livewire\Lead;
 
+use App\Mail\ContactMail;
 use Exception;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
+use Modules\Contact\Entities\ContactsAttribute;
 use Modules\Lead\Entities\Lead;
 
 class Form extends Component
@@ -29,6 +32,25 @@ class Form extends Component
     {
         $this->validate();
 
+        $contact = ContactsAttribute::find(4);
+
+        $text = "*Nama* : $this->nama_lengkap
+*Email* : $this->email
+*Whatsapp* : $this->whatsapp
+*Pertanyaan* :
+
+$this->pertanyaan";
+        $url = 'https://wa.me/' . $contact->value . '?text=' . urlencode($text);
+
+        $data = [
+            'nama' => $this->nama_lengkap,
+            'email' => $this->email,
+            'telepon' => $this->whatsapp,
+            'pertanyaan' => $this->pertanyaan,
+        ];
+
+        $this->dispatchBrowserEvent('whatsapp', $url);
+
         $lead = new Lead();
         $lead->lead_type = 'umum';
         $lead->name = $this->nama_lengkap;
@@ -39,8 +61,9 @@ class Form extends Component
         $lead->save();
 
         try {
-            // Mail::to('greenparkjogja.website@gmail.com')
-            //     ->send(new ContactMail($data));
+            Mail::to('milcahpujirahayu@gmail.com')
+                ->cc('soemarmo86@gmail.com')
+                ->send(new ContactMail($data));
         } catch (Exception $e) {
             //
         }
