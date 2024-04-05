@@ -25,7 +25,7 @@
 
     <meta name="facebook-domain-verification" content="waxbudumb0ucxsjdviiaj4p6zm1svo" />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11111878379"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG7WM8CGNV"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -34,7 +34,7 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'AW-11111878379');
+        gtag('config', 'G-MG7WM8CGNV');
     </script>
     <!-- Meta Pixel Code -->
     <script>
